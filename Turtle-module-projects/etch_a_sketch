@@ -1,0 +1,39 @@
+import turtle as t
+
+bud = t.Turtle()
+screen = t.Screen()
+
+
+def forward():
+    bud.forward(10)
+
+
+def backward():
+    bud.backward(10)
+
+
+def left():
+    newheading = bud.heading() + 10
+    bud.setheading(newheading)
+
+
+def right():
+    newheading = bud.heading() - 10
+    bud.setheading(newheading)
+
+
+def clear():
+    bud.clear()
+    bud.penup()
+    bud.home()
+    bud.pendown()
+
+
+screen.listen()
+screen.onkey(key='w', fun=forward)
+screen.onkey(key='s', fun=backward)
+screen.onkey(key='a', fun=left)
+screen.onkey(key='d', fun=right)
+screen.onkey(key='c', fun=clear)
+
+screen.exitonclick()
